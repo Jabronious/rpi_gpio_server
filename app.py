@@ -15,12 +15,31 @@ LED_CHANNEL = 0      # set to '1' for GPIOs 13, 19, 41, 45 or 53
 def hello_world():
     return 'Hello, World!'
 
+@app.route('/strip')
 def strip_on('strip'):
 	strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     # Intialize the library (must be called once before other functions).
     strip.begin()
     rainbowCycle(strip)
     colorWipe(strip, Color(0, 0, 0), 10)
+
+
+
+#########################
+#						#
+#						#
+#		Private			#
+#						#
+#						#
+#########################
+def rainbowCycle(strip, wait_ms=20, iterations=5):
+    """Draw rainbow that uniformly distributes itself across all pixels."""
+    for j in range(256 * iterations):
+        for i in range(strip.numPixels()):
+            strip.setPixelColor(i, wheel(
+                (int(i * 256 / strip.numPixels()) + j) & 255))
+        strip.show()
+        time.sleep(wait_ms / 1000.0)
 
 if __name__ == '__main__':
     app.run(debug=True,host='0.0.0.0')
