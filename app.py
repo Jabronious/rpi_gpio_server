@@ -16,7 +16,7 @@ def hello_world():
     return 'Hello, World!'
 
 @app.route('/strip')
-def strip_on('strip'):
+def strip_on():
 	strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
     # Intialize the library (must be called once before other functions).
     strip.begin()
