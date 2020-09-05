@@ -21,7 +21,7 @@ def strip_on():
 	strip.begin()
 	rainbowCycle(strip)
 	colorWipe(strip, Color(0, 0, 0), 10)
-
+	return 'Strip On'
 
 
 #########################
