@@ -1,6 +1,12 @@
 from flask import Flask
 app = Flask(__name__)
 
+import time
+from rpi_ws281x import PixelStrip, Color
+import os
+import sys
+import RPi.GPIO as GPIO
+
 # LED strip configuration:
 LED_COUNT = 43        # Number of LED pixels.
 LED_PIN = 12          # GPIO pin connected to the pixels (18 uses PWM!).
