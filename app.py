@@ -32,7 +32,7 @@ def hello_world():
 def strip_on():
 	activated_led.on()
 	playing_led.on()
-	sleep(1)
+	time.sleep(1)
 	playing_led.off()
 	activated_led.off()
 	return 'Strip On'
