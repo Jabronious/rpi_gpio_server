@@ -26,9 +26,9 @@ activated_led = LED(17)
 input_channel_list = [25]
 output_channel_list = [18]
 
-strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+#strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
 # Intialize the library (must be called once before other functions).
-strip.begin()
+#strip.begin()
 
 @app.route('/')
 def hello_world():
