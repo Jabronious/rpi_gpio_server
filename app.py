@@ -35,13 +35,13 @@ def hello_world():
     return 'Hello, World!'
 
 @app.route('/strip')
-def strip():
-	if os.environ.get("STRIP_RUNNING"):
-		colorWipe(strip, Color(0, 0, 0), 10)
-	else:
-		rainbowCycle(strip)
-	os.environ["STRIP_RUNNING"] = not os.environ.get("STRIP_RUNNING")
-	return os.environ.get("STRIP_RUNNING")
+def strip_on():
+	activated_led.on()
+	playing_led.on()
+	time.sleep(1)
+	playing_led.off()
+	activated_led.off()
+	return 'Strip On'
 
 
 #########################
