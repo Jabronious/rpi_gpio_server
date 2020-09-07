@@ -40,7 +40,7 @@ def strip():
 		colorWipe(strip, Color(0, 0, 0), 10)
 	else:
 		rainbowCycle(strip)
-	os.environ.get("STRIP_RUNNING") = !os.environ.get("STRIP_RUNNING")
+	os.environ["STRIP_RUNNING"] = not os.environ.get("STRIP_RUNNING")
 	return os.environ.get("STRIP_RUNNING")
 
 
